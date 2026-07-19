@@ -1,0 +1,306 @@
+/* Fonts */
+@font-face {
+  font-family: 'FinkHeavy';
+  src: url(assets/fonts/FinkHeavyRegular.ttf);
+  font-weight: 600;
+  font-style: initial;
+  font-kerning: auto;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Humming';
+  src: url(assets/fonts/Humming.otf);
+}
+
+/* Palette 
+(Letters and numbers refer to the placement of the color on the palette in the assets folder)
+(ex. A1 is top left) */
+:root {
+  --A1: #88c9a1;
+  --A2: #68b893;
+  --A3: #a4d4a2;
+  --B1: #febdc3;
+  --B2: #ef758a;
+  --B3: #ff7c69;
+  --C1: #7cc9c3;
+  --C2: #8ecfca;
+  --C3: #017c74;
+  --D1: #f8eebc;
+  --D2: #fff9e5;
+  --D3: #786951;
+  --E1: #f7d359;
+  --E2: #fcea64;
+  --E3: #f5c24c;
+}
+
+/* Base styles - feel free to modify and extend */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: FinkHeavy, Humming, system-ui, -apple-system, sans-serif;
+  background-color: var(--D1);
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--D3);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Humming, system-ui, -apple-system, sans-serif;
+  box-shadow: 0 2px #4b4a4a;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar-brand a {
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-user {
+  color: #ccc;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #4a90d9;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn-logout:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Forms */
+.form-page {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Home */
+.home-logo {
+  display: block;
+  height: 150px;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
+.home-welcome {
+  font-family: FinkHeavy, Humming, system-ui, -apple-system, sans-serif;
+  font-size: 35px;
+}
+
+/* Messages */
+.error-message {
+  color: #d9534f;
+  background-color: #fdf2f2;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.info-message {
+  color: #31708f;
+  background-color: #d9edf7;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Critter Info Cards */
+
+.card-container {
+  background-color: var(--A2);
+  padding: 12px;
+  border-radius: 12px;
+  width: 90vw;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 12px;
+  display: flex;
+  justify-self: center;
+  scrollbar-color: var(--A3) var(--A2);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  box-shadow: 2px 6px 5px #4b4a4a;
+}
+
+.card {
+  background-color: var(--C3);
+  font-family: humming, system-ui, -apple-system, sans-serif;
+  width: 400px;
+  height: 255px;
+  padding: 8px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 2px 2px 1px #4b4a4a;
+}
+
+.bug-card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.bug-card-div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.sub-card {
+  background-color: var(--C1);
+  border-radius: 12px;
+  width: 100%;
+  padding: 4px;
+}
+
+.bug-card-name {
+  font-size: large;
+}
+
+.bug-card-availability {
+  font-size: x-small;
+  white-space: pre;
+}
+
+.bug-card-location {
+  font-size: small;
+}
+
+.fish-card-photo-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bug-card-photo {
+  height: 100px;
+  max-width: 170px;
+  object-fit: contain;
+}
+
+.fish-card-photo {
+  width: 170px;
+  max-height: 75px;
+  object-fit: contain;
+}
+
+.fish-card-shadow {
+  font-size: small;
+}
+
+.bug-card-button-div {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.button-logo {
+  height: 55px;
+  width: auto;
+}
+
+.bug-card-button {
+  box-shadow: 0 3px #4b4a4a;
+  transition: 0.1s;
+}
+
+[data-pressed="true"] {
+  background-color: var(--A1);
+  transform: translateY(1px);
+  box-shadow: 0 2px #4b4a4a;
+  border-style: inset;
+}
